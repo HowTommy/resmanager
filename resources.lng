@@ -1,0 +1,16 @@
+resource_name	en	fr
+// resources.lng is the file with all the translations for all languages
+// you must use tabs (\t) to split values
+// you can add comments with "//"
+// the first line must always be like "resources_name	first_language	second_language ..."
+
+// you can add a language by adding a value on the first line (ger for instance) and then by adding the translations on each line
+// when you're done, just start ResourcesSplitter.exe, it will recreate the php files for each language (in the parent folder)
+
+// translations to display the available languages
+en	English	English
+fr	Français	Français
+
+// common translations
+sample_res_1	sample_res_1_text_en	sample_res_1_text_fr
+sample_res_2	sample_res_2_text_en	sample_res_2_text_fr
