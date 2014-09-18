@@ -1,7 +1,7 @@
 <?php
 	// that resource file was created with a tool: resmanager by howtommy (https://github.com/HowTommy/resmanager)
-	$defaultLanguage = 'en';
 	$languages = array('en', 'fr');
+	$currentLanguage = 'fr';
 	$resources = array(
 		'en' => 'English',
 		'fr' => 'Français',

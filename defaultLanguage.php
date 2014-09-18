@@ -1,0 +1,3 @@
+<?php
+	$defaultLanguage = 'en';
+?>

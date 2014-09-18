@@ -22,11 +22,12 @@ namespace ResourcesSplitter
                 var lines = resources.Split(new string[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
                 var languages = lines[0].Split(new string[] {"\t"}, StringSplitOptions.None).Skip(1);
 
+                File.WriteAllText("defaultLanguage.php", string.Format("<?php{0}\t$defaultLanguage = '{1}';{0}?>", Environment.NewLine, languages.ElementAt(0)));
+
                 string fileBeginningWithLanguages =
-                    string.Format("<?php{0}\t{1}{0}\t$defaultLanguage = '{2}';{0}\t$languages = array('{3}');{0}",
+                    string.Format("<?php{0}\t{1}{0}\t$languages = array('{2}');{0}",
                         Environment.NewLine,
                         refToHowTommy,
-                        languages.ElementAt(0),
                         string.Join("', '", languages));
 
                 for (var i = 0; i < languages.Count(); i++)
@@ -34,6 +35,8 @@ namespace ResourcesSplitter
                     sb.Append(fileBeginningWithLanguages);
 
                     string language = languages.ElementAt(i);
+
+                    sb.Append(string.Format("\t$currentLanguage = '{0}';{1}", language, Environment.NewLine));
 
                     sb.Append(string.Format("\t$resources = array(", Environment.NewLine));
 
